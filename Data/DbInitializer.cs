@@ -36,8 +36,8 @@ namespace csci340lab8.Data
                 new Course{CourseID=4041,Title="Gags",Credits=3},
                 new Course{CourseID=1045,Title="Costume",Credits=4},
                 new Course{CourseID=3141,Title="Acting",Credits=4},
-                new Course{CourseID=2021,Title="Composition",Credits=3},
-                new Course{CourseID=2042,Title="Literature",Credits=4}
+                new Course{CourseID=2021,Title="Juggling",Credits=3},
+                new Course{CourseID=2042,Title="Clowning",Credits=4}
             };
 
             context.Courses.AddRange(courses);

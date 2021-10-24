@@ -26,7 +26,6 @@ namespace csci340lab8
                 try
                 {
                     var context = services.GetRequiredService<SchoolContext>();
-                    context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
