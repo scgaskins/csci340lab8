@@ -169,3 +169,4 @@ C:\Users\sammy\Documents\Classes\2021-2022\FallSemester\Databases\csci340lab8\ob
 C:\Users\sammy\Documents\Classes\2021-2022\FallSemester\Databases\csci340lab8\obj\Debug\net5.0\Razor\Pages\Students\Details.cshtml.g.cs
 C:\Users\sammy\Documents\Classes\2021-2022\FallSemester\Databases\csci340lab8\obj\Debug\net5.0\Razor\Pages\Students\Edit.cshtml.g.cs
 C:\Users\sammy\Documents\Classes\2021-2022\FallSemester\Databases\csci340lab8\obj\Debug\net5.0\Razor\Pages\Students\Index.cshtml.g.cs
+C:\Users\sammy\Documents\Classes\2021-2022\FallSemester\Databases\csci340lab8\obj\Debug\net5.0\Razor\Pages\About.cshtml.g.cs
