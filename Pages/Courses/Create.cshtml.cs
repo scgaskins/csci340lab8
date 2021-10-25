@@ -10,12 +10,13 @@ using csci340lab8.Models;
 
 namespace csci340lab8.Pages.Courses
 {
-    public class CreateModel : PageModel
+    public class CreateModel : DepartmentNamePageModel
     {
         private readonly csci340lab8.Data.SchoolContext _context;
 
         public CreateModel(csci340lab8.Data.SchoolContext context)
         {
+            PopulateDepartmentsDropDownList(_context);
             _context = context;
         }
 
@@ -31,15 +32,21 @@ namespace csci340lab8.Pages.Courses
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            var emptyCourse = new Course();
+
+            if (await TryUpdateModelAsync<Course>(
+                 emptyCourse,
+                 "course",   // Prefix for form value.
+                 s => s.CourseID, s => s.DepartmentID, s => s.Title, s => s.Credits))
             {
-                return Page();
+                _context.Courses.Add(emptyCourse);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
             }
 
-            _context.Courses.Add(Course);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            // Select DepartmentID if TryUpdateModelAsync fails.
+            PopulateDepartmentsDropDownList(_context, emptyCourse.DepartmentID);
+            return Page();
         }
     }
 }
